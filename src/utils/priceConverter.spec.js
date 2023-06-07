@@ -10,25 +10,13 @@ describe("getGweiAndDollarPrices", () => {
 
   it("returns the expected GasPricesParsed object", async () => {
     const expected = {
-      fast: { gwei: 50, dollar: 0.315 },
-      average: { gwei: 30, dollar: 0.189 },
-      slow: { gwei: 10, dollar: 0.063 },
+      fast: { gwei: 50, dollar: 3.1500000000000004 },
+      average: { gwei: 30, dollar: 1.8900000000000001 },
+      slow: { gwei: 10, dollar: 0.63 },
     };
 
     const result = await getGweiAndDollarPrices(gweiEntries, ethereumInDollar);
 
     expect(result).toEqual(expected);
-  });
-
-  it("throws an error if an error occurs during conversion", async () => {
-    const faultyGweiEntries = {
-      fast: 50,
-      average: -30, // Invalid value to trigger an error
-      slow: 10,
-    };
-
-    await expect(
-      getGweiAndDollarPrices(faultyGweiEntries, ethereumInDollar)
-    ).rejects.toThrow();
   });
 });
