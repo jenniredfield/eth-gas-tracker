@@ -29,7 +29,7 @@ function App() {
       const resEthUSD = await getEthereumDollarPrice();
       setIsLoading(false);
       const { USD } = resEthUSD;
-      const { standard, fast, instant } = await getGweiAndDollarPrices(
+      const { standard, fast, instant } = getGweiAndDollarPrices(
         gasPrices,
         USD
       );

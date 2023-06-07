@@ -1,7 +1,7 @@
-export const getGweiAndDollarPrices = async (
+export const getGweiAndDollarPrices = (
   gweiEntries: PricesApi,
   ethereumInDollar: number
-): Promise<GasPricesParsed> => {
+): GasPricesParsed => {
   try {
     const convertedValues = Object.entries(gweiEntries).map(([key, value]) => {
       const gasLimit = 21000;
